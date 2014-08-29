@@ -17,6 +17,6 @@
 @property (nonatomic,readonly) NSPersistentStore *store;
 
 - (void)setupCoreData;
-- (void)setupContext;
+- (void)saveContext;
 
 @end

@@ -82,8 +82,51 @@ NSString *storeFileName = @"Grocery-Dude.sqlite";
 }
 
 
+- (void)loadStore {
+    if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd)); }
+    
+    if (_store) {return;} // Don't load store if it's already loaded NSError *error = nil;
+    
+    NSError *error;
+    
+    _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType                        configuration:nil URL:[self storeURL] options:nil error:&error];
+    
+    if (!_store) {NSLog(@"Failed to add store. Error: %@", error);abort();}
+    
+    else {if (debug==1) {NSLog(@"Successfully added store: %@", _store);}}
+}
 
-- (void)setupCoreData{}
-- (void)setupContext{}
+
+-  (void)setupCoreData {
+    if (debug==1) {
+    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd)); }
+    
+    [self loadStore];
+}
+
+
+#pragma mark - SAVING
+
+- (void)saveContext {
+    if (debug==1) {
+    NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd)); }
+    
+    if ([_context hasChanges])
+    {
+        NSError *error = nil;
+        if ([_context save:&error])
+        {
+            NSLog(@"_context SAVED changes to persistent store");
+        }
+        else {
+                NSLog(@"Failed to save _context: %@", error);
+             }
+    }
+    else
+    {
+        NSLog(@"SKIPPED _context save, there are no changes!");
+    }
+}
+
 
 @end
