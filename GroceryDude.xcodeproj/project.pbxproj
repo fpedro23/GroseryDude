@@ -21,6 +21,8 @@
 		EB3F96B919B0CF6F008981D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3F969B19B0CF6F008981D3 /* UIKit.framework */; };
 		EB3F96C119B0CF6F008981D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB3F96BF19B0CF6F008981D3 /* InfoPlist.strings */; };
 		EB3F96C319B0CF6F008981D3 /* GroceryDudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3F96C219B0CF6F008981D3 /* GroceryDudeTests.m */; };
+		EB3F96D719B0D306008981D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3F96D619B0D306008981D3 /* CoreData.framework */; };
+		EB3F96DB19B0D377008981D3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3F96DA19B0D377008981D3 /* CoreDataHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		EB3F96BE19B0CF6F008981D3 /* GroceryDudeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GroceryDudeTests-Info.plist"; sourceTree = "<group>"; };
 		EB3F96C019B0CF6F008981D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB3F96C219B0CF6F008981D3 /* GroceryDudeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroceryDudeTests.m; sourceTree = "<group>"; };
+		EB3F96D619B0D306008981D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EB3F96D919B0D377008981D3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		EB3F96DA19B0D377008981D3 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3F96D719B0D306008981D3 /* CoreData.framework in Frameworks */,
 				EB3F969A19B0CF6F008981D3 /* CoreGraphics.framework in Frameworks */,
 				EB3F969C19B0CF6F008981D3 /* UIKit.framework in Frameworks */,
 				EB3F969819B0CF6F008981D3 /* Foundation.framework in Frameworks */,
@@ -101,6 +107,7 @@
 		EB3F969619B0CF6F008981D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB3F96D619B0D306008981D3 /* CoreData.framework */,
 				EB3F969719B0CF6F008981D3 /* Foundation.framework */,
 				EB3F969919B0CF6F008981D3 /* CoreGraphics.framework */,
 				EB3F969B19B0CF6F008981D3 /* UIKit.framework */,
@@ -112,6 +119,7 @@
 		EB3F969D19B0CF6F008981D3 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
+				EB3F96D819B0D340008981D3 /* GenericCoreDataClasses */,
 				EB3F96A619B0CF6F008981D3 /* AppDelegate.h */,
 				EB3F96A719B0CF6F008981D3 /* AppDelegate.m */,
 				EB3F96A919B0CF6F008981D3 /* Main.storyboard */,
@@ -150,6 +158,15 @@
 				EB3F96BF19B0CF6F008981D3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB3F96D819B0D340008981D3 /* GenericCoreDataClasses */ = {
+			isa = PBXGroup;
+			children = (
+				EB3F96D919B0D377008981D3 /* CoreDataHelper.h */,
+				EB3F96DA19B0D377008981D3 /* CoreDataHelper.m */,
+			);
+			name = GenericCoreDataClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +268,7 @@
 			files = (
 				EB3F96AE19B0CF6F008981D3 /* ViewController.m in Sources */,
 				EB3F96A819B0CF6F008981D3 /* AppDelegate.m in Sources */,
+				EB3F96DB19B0D377008981D3 /* CoreDataHelper.m in Sources */,
 				EB3F96A419B0CF6F008981D3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
