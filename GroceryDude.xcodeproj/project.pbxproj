@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB3EF73A19B13BF0004C403E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB3EF73819B13BF0004C403E /* Model.xcdatamodeld */; };
+		EB3EF73D19B142FB004C403E /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EF73C19B142FB004C403E /* Item.m */; };
 		EB3F969819B0CF6F008981D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3F969719B0CF6F008981D3 /* Foundation.framework */; };
 		EB3F969A19B0CF6F008981D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3F969919B0CF6F008981D3 /* CoreGraphics.framework */; };
 		EB3F969C19B0CF6F008981D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3F969B19B0CF6F008981D3 /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB3EF73919B13BF0004C403E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EB3EF73B19B142FB004C403E /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		EB3EF73C19B142FB004C403E /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		EB3F969419B0CF6F008981D3 /* GroceryDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3F969719B0CF6F008981D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB3F969919B0CF6F008981D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB3EF73719B13BD8004C403E /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB3EF73819B13BF0004C403E /* Model.xcdatamodeld */,
+				EB3EF73B19B142FB004C403E /* Item.h */,
+				EB3EF73C19B142FB004C403E /* Item.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 		EB3F968B19B0CF6F008981D3 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +134,7 @@
 		EB3F969D19B0CF6F008981D3 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
+				EB3EF73719B13BD8004C403E /* Data Model */,
 				EB3F96D819B0D340008981D3 /* GenericCoreDataClasses */,
 				EB3F96A619B0CF6F008981D3 /* AppDelegate.h */,
 				EB3F96A719B0CF6F008981D3 /* AppDelegate.m */,
@@ -266,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3EF73D19B142FB004C403E /* Item.m in Sources */,
 				EB3F96AE19B0CF6F008981D3 /* ViewController.m in Sources */,
 				EB3F96A819B0CF6F008981D3 /* AppDelegate.m in Sources */,
+				EB3EF73A19B13BF0004C403E /* Model.xcdatamodeld in Sources */,
 				EB3F96DB19B0D377008981D3 /* CoreDataHelper.m in Sources */,
 				EB3F96A419B0CF6F008981D3 /* main.m in Sources */,
 			);
@@ -474,6 +492,7 @@
 				EB3F96C819B0CF6F008981D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB3F96C919B0CF6F008981D3 /* Build configuration list for PBXNativeTarget "GroceryDudeTests" */ = {
 			isa = XCConfigurationList;
@@ -482,8 +501,22 @@
 				EB3F96CB19B0CF6F008981D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB3EF73819B13BF0004C403E /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB3EF73919B13BF0004C403E /* Model.xcdatamodel */,
+			);
+			currentVersion = EB3EF73919B13BF0004C403E /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EB3F968C19B0CF6F008981D3 /* Project object */;
 }

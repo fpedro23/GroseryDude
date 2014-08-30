@@ -87,7 +87,7 @@ NSString *storeFileName = @"Grocery-Dude.sqlite";
     
     if (_store) {return;} // Don't load store if it's already loaded NSError *error = nil;
     
-    NSError *error;
+     NSError *error = nil;
     
     _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType                        configuration:nil URL:[self storeURL] options:nil error:&error];
     
