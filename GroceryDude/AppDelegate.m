@@ -16,52 +16,20 @@
 
 
 - (void) demo {
-    /*if (debug==1) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd)); }
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
-    
-    //    NSFetchRequest * request = [[[_coreDataHelper model] fetchRequestTemplateForName:@"Test"] copy];
-    
-//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-  //  [request setSortDescriptors:[NSArray arrayWithObject:sort]];
-    
-   // NSPredicate *filter = [NSPredicate predicateWithFormat:@"name != %@",@"Coffee"];
-   // [request setPredicate:filter];
-    
-    
-     NSArray *fetchedObjects = [_coreDataHelper.context executeFetchRequest:request error:nil];
-    
-    for(Item *item in fetchedObjects){
-        NSLog(@"Deleting Object = %@",item.name);
-    [_coreDataHelper.context deleteObject:item];
-    }*/
-    
-    if (debug==1) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd)); }
-    NSFetchRequest *request =
-    [NSFetchRequest fetchRequestWithEntityName:@"Amount"]; [request setFetchLimit:50];
-    NSError *error = nil;
-    NSArray *fetchedObjects =
-    [_coreDataHelper.context executeFetchRequest:request error:&error];
-    if (error) {NSLog(@"%@", error);} else {
-        for (Amount *amount in fetchedObjects) { NSLog(@"Fetched Object = %@", amount.xyz);
-        } }
+
 }
 
--(CoreDataHelper *)cdh{
-    
+- (CoreDataHelper*)cdh {
     if (debug==1) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    
-    if (debug==1) { NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd)); }
-    
     if (!_coreDataHelper) {
-        _coreDataHelper = [CoreDataHelper new];
-        [_coreDataHelper setupCoreData];
-    }
+        static dispatch_once_t predicate;
+        dispatch_once(&predicate, ^{ _coreDataHelper = [CoreDataHelper new]; });
+        [_coreDataHelper setupCoreData]; }
     return _coreDataHelper;
 }
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
